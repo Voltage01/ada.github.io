@@ -7,20 +7,16 @@
   <meta name="description" content="Portfolio of Ada — Electronic and Communications Engineering student, musician, sound designer, and builder of audiovisual systems." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="noise"></div>
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
+  <div class="page-bg"></div>
+  <div class="grain"></div>
 
   <header class="site-header">
     <div class="container nav-wrap">
-      <a href="#top" class="brand">
-        <span class="brand-mark"></span>
-        <span>Ada</span>
-      </a>
+      <a href="#top" class="brand">ADA</a>
 
       <nav class="nav">
         <a href="#about">About</a>
@@ -32,182 +28,166 @@
   </header>
 
   <main id="top">
-    <section class="hero container">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Electronic & Communications Engineering • Music • Research</p>
+    <section class="hero container reveal">
+      <div class="hero-top">
+        <p class="mini-label">Engineering / Sound / Art / Research</p>
+
+        <div class="hero-band">
+          <span>I BUILD SYSTEMS</span>
+        </div>
+
         <h1>
-          I build things where
-          <span class="gradient-text">signal</span>,
-          <span class="gradient-text alt">sound</span>,
-          and design collide.
+          where sound,
+          signal,
+          and visual identity
+          hit each other.
         </h1>
+
         <p class="hero-text">
-          I’m Ada, an Electronic and Communications Engineering student at Politecnico di Torino with a strong pull toward physics, musical instruments, sound design, and audiovisual systems. I like projects that feel both technical and alive.
+          I’m Ada, an Electronic and Communications Engineering student at Politecnico di Torino. I’m interested in musical instruments, sound design, audiovisual systems, physics, and projects that feel alive instead of just functional.
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#work">See selected work</a>
-          <a class="btn btn-secondary" href="#contact">Get in touch</a>
+          <a class="btn btn-dark" href="#work">Selected work</a>
+          <a class="btn btn-light" href="#contact">Contact</a>
         </div>
-
-        <ul class="hero-tags" aria-label="focus areas">
-          <li>Instrument Design</li>
-          <li>Audio Systems</li>
-          <li>Creative Coding</li>
-          <li>Physics-Driven Thinking</li>
-        </ul>
       </div>
 
-      <aside class="hero-panel reveal delay-1" aria-label="profile highlights">
-        <div class="panel-grid">
-          <article class="glass card tall">
-            <p class="card-label">Current Focus</p>
-            <h2>Engineering with artistic intent</h2>
-            <p>
-              Building at the intersection of electronics, music technology, signal flow, embedded systems, and visual/auditory experience.
-            </p>
-          </article>
-
-          <article class="glass card accent">
-            <p class="card-label">Based in</p>
-            <h3>Turin</h3>
-            <p>Studying, prototyping, and exploring research-heavy ideas.</p>
-          </article>
-
-          <article class="glass card waveform-card">
-            <p class="card-label">Style</p>
-            <div class="waveform" aria-hidden="true">
-              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <p>Neon, sharp, minimal, and a little bit loud.</p>
-          </article>
+      <div class="hero-side">
+        <div class="poster-card black-card">
+          <p class="card-kicker">CURRENT DIRECTION</p>
+          <h2>Artistic technology, not sterile technology.</h2>
         </div>
-      </aside>
+
+        <div class="poster-row">
+          <div class="poster-card cream-card">
+            <p class="card-kicker">BASED IN</p>
+            <h3>Turin</h3>
+          </div>
+
+          <div class="poster-card purple-card">
+            <p class="card-kicker">MODE</p>
+            <h3>Loud / Sharp / Expressive</h3>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="about" class="section container reveal">
-      <div class="section-heading">
-        <p class="eyebrow">About</p>
-        <h2>Technical mind, artistic instinct.</h2>
+      <div class="section-title-wrap">
+        <p class="mini-label">About</p>
+        <div class="section-band"><span>NOT JUST TECH</span></div>
       </div>
 
-      <div class="about-grid">
-        <div class="glass about-copy">
+      <div class="split-grid">
+        <div class="text-block cream-panel">
           <p>
-            My work naturally moves between engineering and art. On one side, I care about circuits, systems, control, embedded logic, and the physical behavior behind technology. On the other, I care about music, sonic identity, aesthetics, and how a project feels when someone actually experiences it.
+            My work sits between engineering and artistic expression. I care about circuits, systems, control, embedded logic, and physical behavior — but I also care about mood, texture, rhythm, sound, visuals, and how a thing actually feels when someone encounters it.
           </p>
           <p>
-            I’m especially drawn to projects involving instrument building, sound design, real-time interaction, physics-inspired problem solving, and research directions like quantum technologies.
+            I’m most drawn to instrument building, real-time interaction, sound-centered design, audiovisual performance ideas, and research directions where physics opens new creative possibilities.
           </p>
         </div>
 
-        <div class="about-stats">
-          <div class="glass stat-box">
-            <span class="stat-value">01</span>
-            <p>Engineering student with a strong interest in research and systems thinking.</p>
+        <div class="stack-blocks">
+          <div class="info-block orange-block">
+            <span>01</span>
+            <p>Engineering student with a strong pull toward research and systems thinking.</p>
           </div>
-          <div class="glass stat-box">
-            <span class="stat-value">02</span>
-            <p>Musician and sound designer working on instruments, audio workflows, and audiovisual ideas.</p>
+          <div class="info-block black-block">
+            <span>02</span>
+            <p>Musician and sound designer interested in tools, instruments, and sonic identity.</p>
           </div>
-          <div class="glass stat-box">
-            <span class="stat-value">03</span>
-            <p>Comfortable in the space where hardware, software, and creative direction overlap.</p>
+          <div class="info-block purple-block light-text">
+            <span>03</span>
+            <p>I like projects where hardware, software, art direction, and experimentation overlap.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section id="work" class="section container reveal">
-      <div class="section-heading">
-        <p class="eyebrow">Selected Directions</p>
-        <h2>Things I build and explore.</h2>
+      <div class="section-title-wrap">
+        <p class="mini-label">Selected directions</p>
+        <div class="section-band black-band"><span>WHAT I MAKE</span></div>
       </div>
 
-      <div class="cards-grid">
-        <article class="glass project-card">
-          <div class="project-topline">
-            <span class="dot"></span>
-            <p>Electronics + Audio</p>
-          </div>
+      <div class="work-grid">
+        <article class="work-card cream-panel tilt-left">
+          <p class="card-kicker">Electronics + Audio</p>
           <h3>Experimental Instrument Design</h3>
           <p>
-            Prototyping musical tools that treat electronics not as support, but as part of the instrument itself.
+            Building musical tools where the electronic system becomes part of the instrument itself, not just hidden support hardware.
           </p>
         </article>
 
-        <article class="glass project-card">
-          <div class="project-topline">
-            <span class="dot"></span>
-            <p>Sound + Image</p>
-          </div>
+        <article class="work-card orange-panel tilt-right">
+          <p class="card-kicker">Sound + Image</p>
           <h3>Audiovisual Systems</h3>
           <p>
-            Designing experiences where motion, visuals, and sound respond to each other in real time.
+            Designing setups where movement, visuals, timing, and sound can respond to each other in real time.
           </p>
         </article>
 
-        <article class="glass project-card">
-          <div class="project-topline">
-            <span class="dot"></span>
-            <p>Research + Physics</p>
-          </div>
+        <article class="work-card purple-panel tilt-left light-text">
+          <p class="card-kicker">Research + Physics</p>
           <h3>Scientific Curiosity</h3>
           <p>
-            Interested in deeper technical questions, especially where physics and emerging technologies open new creative directions.
+            Interested in deeper technical questions, especially where physics and emerging technologies create new artistic directions.
           </p>
         </article>
       </div>
     </section>
 
     <section id="skills" class="section container reveal">
-      <div class="section-heading">
-        <p class="eyebrow">Skills</p>
-        <h2>Core areas I like working in.</h2>
+      <div class="section-title-wrap">
+        <p class="mini-label">Core areas</p>
+        <div class="section-band"><span>TOOLS / INTERESTS / MINDSET</span></div>
       </div>
 
-      <div class="skills-layout">
-        <div class="glass skills-panel">
+      <div class="skills-grid">
+        <div class="skills-panel black-card">
           <h3>Engineering</h3>
-          <ul class="pill-list">
+          <ul>
             <li>Electronics</li>
             <li>Signal Processing</li>
             <li>Embedded Systems</li>
-            <li>Control Thinking</li>
             <li>Circuit Prototyping</li>
+            <li>Control Thinking</li>
           </ul>
         </div>
 
-        <div class="glass skills-panel">
+        <div class="skills-panel cream-card">
           <h3>Creative</h3>
-          <ul class="pill-list">
+          <ul>
             <li>Music Production</li>
             <li>Sound Design</li>
             <li>Audiovisual Concepts</li>
-            <li>Art Direction</li>
             <li>Interaction Design</li>
+            <li>Art Direction</li>
           </ul>
         </div>
 
-        <div class="glass skills-panel">
+        <div class="skills-panel orange-card">
           <h3>Mindset</h3>
-          <ul class="pill-list">
+          <ul>
             <li>Research-Driven</li>
-            <li>Systematic</li>
             <li>Experimental</li>
-            <li>Detail-Oriented</li>
             <li>Cross-Disciplinary</li>
+            <li>Detail-Oriented</li>
+            <li>Systematic</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section id="contact" class="section container reveal">
-      <div class="glass contact-box">
-        <p class="eyebrow">Contact</p>
-        <h2>Let’s build something that sounds and feels different.</h2>
-        <p>
-          This template is ready for your real links. Replace the placeholders below with your email, GitHub, LinkedIn, Instagram, portfolio projects, or CV.
+      <div class="contact-poster">
+        <p class="mini-label">Contact</p>
+        <div class="section-band black-band"><span>LET'S MAKE SOMETHING STRONG</span></div>
+
+        <p class="contact-text">
+          Replace the links below with your real email and platforms.
         </p>
 
         <div class="contact-links">
