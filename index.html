@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ada | Portfolio</title>
+  <title>Ada Sarp Sahin | Portfolio</title>
   <meta name="description" content="Portfolio of Ada — Electronic and Communications Engineering student, musician, sound designer, and builder of audiovisual systems." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -19,12 +20,12 @@
     <div class="container nav-wrap">
       <a href="#top" class="brand">
         <span class="brand-mark"></span>
-        <span>Ada</span>
+        <span>Ada Sarp Sahin</span>
       </a>
 
       <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
+        <a href="#work">Areas</a>
+        <a href="#projects-done">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -34,7 +35,7 @@
   <main id="top">
     <section class="hero container">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Electronic & Communications Engineering • Music • Research</p>
+        <p class="eyebrow">Electronic & Communications Engineering • Music & Sound Design</p>
         <h1>
           I build things where
           <span class="gradient-text">signal</span>,
@@ -42,7 +43,7 @@
           and design collide.
         </h1>
         <p class="hero-text">
-          I’m Ada, an Electronic and Communications Engineering student at Politecnico di Torino with a strong pull toward physics, musical instruments, sound design, and audiovisual systems. I like projects that feel both technical and alive.
+          I’m Ada, an Electronic and Communications Engineering student at Politecnico di Torino. I try to publish projects where I can explore the intersection of electronics, music technology, signal flow, embedded systems, and visual/auditory experience. I’m currently focused on building experimental instruments and audiovisual systems that treat electronics not as support, but as part of the instrument itself.
         </p>
 
         <div class="hero-actions">
@@ -51,17 +52,18 @@
         </div>
 
         <ul class="hero-tags" aria-label="focus areas">
-          <li>Instrument Design</li>
-          <li>Audio Systems</li>
-          <li>Creative Coding</li>
-          <li>Physics-Driven Thinking</li>
+          <li>Electronic Instrument Design</li>
+          <li>Analog Circuitry</li>
+          <li>Machine Learning</li>
+          <li>Signal Processing</li>
+          <li>Audiovisual Systems</li>
         </ul>
       </div>
 
       <aside class="hero-panel reveal delay-1" aria-label="profile highlights">
         <div class="panel-grid">
           <article class="glass card tall">
-            <p class="card-label">Current Focus</p>
+            <p class="card-label">Main Focus</p>
             <h2>Engineering with artistic intent</h2>
             <p>
               Building at the intersection of electronics, music technology, signal flow, embedded systems, and visual/auditory experience.
@@ -71,51 +73,19 @@
           <article class="glass card accent">
             <p class="card-label">Based in</p>
             <h3>Turin</h3>
+            <div id="location-map" class="location-map"></div>
             <p>Studying, prototyping, and exploring research-heavy ideas.</p>
           </article>
 
           <article class="glass card waveform-card">
-            <p class="card-label">Style</p>
+            <p class="card-label">Design Approach</p>
             <div class="waveform" aria-hidden="true">
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </div>
-            <p>Neon, sharp, minimal, and a little bit loud.</p>
+            <p>Signal-driven aesthetic. Minimal interface with purposeful detail—form follows physics and function.</p>
           </article>
         </div>
       </aside>
-    </section>
-
-    <section id="about" class="section container reveal">
-      <div class="section-heading">
-        <p class="eyebrow">About</p>
-        <h2>Technical mind, artistic instinct.</h2>
-      </div>
-
-      <div class="about-grid">
-        <div class="glass about-copy">
-          <p>
-            My work naturally moves between engineering and art. On one side, I care about circuits, systems, control, embedded logic, and the physical behavior behind technology. On the other, I care about music, sonic identity, aesthetics, and how a project feels when someone actually experiences it.
-          </p>
-          <p>
-            I’m especially drawn to projects involving instrument building, sound design, real-time interaction, physics-inspired problem solving, and research directions like quantum technologies.
-          </p>
-        </div>
-
-        <div class="about-stats">
-          <div class="glass stat-box">
-            <span class="stat-value">01</span>
-            <p>Engineering student with a strong interest in research and systems thinking.</p>
-          </div>
-          <div class="glass stat-box">
-            <span class="stat-value">02</span>
-            <p>Musician and sound designer working on instruments, audio workflows, and audiovisual ideas.</p>
-          </div>
-          <div class="glass stat-box">
-            <span class="stat-value">03</span>
-            <p>Comfortable in the space where hardware, software, and creative direction overlap.</p>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section id="work" class="section container reveal">
@@ -150,13 +120,88 @@
         <article class="glass project-card">
           <div class="project-topline">
             <span class="dot"></span>
-            <p>Research + Physics</p>
+            <p>Data + Learning</p>
           </div>
-          <h3>Scientific Curiosity</h3>
+          <h3>Machine Learning Applications</h3>
           <p>
-            Interested in deeper technical questions, especially where physics and emerging technologies open new creative directions.
+            Exploring neural networks, signal classification, and data-driven systems in music and electronics contexts.
           </p>
         </article>
+      </div>
+    </section>
+
+    <section id="projects-done" class="section container reveal">
+      <div class="section-heading">
+        <p class="eyebrow">Selected Projects</p>
+        <h2>Things I have built.</h2>
+      </div>
+
+      <div class="projects-done-grid" id="projects-done-grid">
+        <article class="glass done-card">
+          <div class="project-topline">
+            <span class="dot"></span>
+            <p>Machine Learning</p>
+          </div>
+          <h3>Neural Networks from Scratch</h3>
+          <p>
+            Built core neural network logic from first principles with practical scripts and notebooks to understand learning dynamics without relying on heavy abstractions.
+          </p>
+          <a class="done-link" href="#contact">Ask me about this project</a>
+        </article>
+
+        <article class="glass done-card">
+          <div class="project-topline">
+            <span class="dot"></span>
+            <p>Simulation</p>
+          </div>
+          <h3>Monte Carlo Simulations</h3>
+          <p>
+            Designed simulation experiments to test assumptions under uncertainty and compare outcomes across multiple randomized trials.
+          </p>
+          <a class="done-link" href="#contact">Ask me about this project</a>
+        </article>
+
+        <article class="glass done-card done-card-extra" hidden>
+          <div class="project-topline">
+            <span class="dot"></span>
+            <p>Data Cleaning</p>
+          </div>
+          <h3>Weather Dataset Preparation</h3>
+          <p>
+            Built a clean data workflow to transform raw weather records into analysis-ready datasets for model training and exploratory work.
+          </p>
+          <a class="done-link" href="#contact">Ask me about this project</a>
+        </article>
+
+        <article class="glass done-card done-card-extra" hidden>
+          <div class="project-topline">
+            <span class="dot"></span>
+            <p>Notebook Workflow</p>
+          </div>
+          <h3>Zero to GPT Learning Notebook</h3>
+          <p>
+            Structured a notebook-first learning workflow to iterate on ideas quickly, document findings, and turn experiments into reusable references.
+          </p>
+          <a class="done-link" href="#contact">Ask me about this project</a>
+        </article>
+
+        <article class="glass done-card done-card-extra" hidden>
+          <div class="project-topline">
+            <span class="dot"></span>
+            <p>Team Data</p>
+          </div>
+          <h3>Structured Team CSV Project</h3>
+          <p>
+            Organized and validated team-based tabular data to support cleaner analysis pipelines and avoid downstream data quality issues.
+          </p>
+          <a class="done-link" href="#contact">Ask me about this project</a>
+        </article>
+      </div>
+
+      <div class="projects-done-actions">
+        <button class="btn btn-secondary projects-toggle" id="projects-toggle" type="button" aria-expanded="false" aria-controls="projects-done-grid">
+          Show more projects
+        </button>
       </div>
     </section>
 
@@ -172,8 +217,7 @@
           <ul class="pill-list">
             <li>Electronics</li>
             <li>Signal Processing</li>
-            <li>Embedded Systems</li>
-            <li>Control Thinking</li>
+            <li>Control Systems</li>
             <li>Circuit Prototyping</li>
           </ul>
         </div>
@@ -184,19 +228,16 @@
             <li>Music Production</li>
             <li>Sound Design</li>
             <li>Audiovisual Concepts</li>
-            <li>Art Direction</li>
-            <li>Interaction Design</li>
           </ul>
         </div>
 
         <div class="glass skills-panel">
-          <h3>Mindset</h3>
+          <h3>Machine Learning</h3>
           <ul class="pill-list">
-            <li>Research-Driven</li>
-            <li>Systematic</li>
-            <li>Experimental</li>
-            <li>Detail-Oriented</li>
-            <li>Cross-Disciplinary</li>
+            <li>Neural Networks</li>
+            <li>Signal Classification</li>
+            <li>Data Analysis</li>
+            <li>Python & PyTorch</li>
           </ul>
         </div>
       </div>
@@ -205,19 +246,102 @@
     <section id="contact" class="section container reveal">
       <div class="glass contact-box">
         <p class="eyebrow">Contact</p>
-        <h2>Let’s build something that sounds and feels different.</h2>
-        <p>
-          This template is ready for your real links. Replace the placeholders below with your email, GitHub, LinkedIn, Instagram, portfolio projects, or CV.
+        <h2 class="contact-title">Let's make something vivid together.</h2>
+        <p class="contact-lead">
+          Open to collaborations, prototypes, and research-heavy ideas in electronics, sound, and machine learning.
         </p>
+        <div class="contact-accent-row" aria-label="availability">
+          <span class="contact-chip">Available for collaborations</span>
+        </div>
 
         <div class="contact-links">
-          <a href="mailto:you@example.com">you@example.com</a>
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Instagram</a>
+          <a class="contact-link email" href="mailto:adasarp48@gmail.com">
+            <span class="link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" role="img" aria-label="Email icon">
+                <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="link-label">adasarp48@gmail.com</span>
+          </a>
+          <a class="contact-link github" href="https://github.com/Voltage01">
+            <span class="link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" role="img" aria-label="GitHub icon">
+                <path d="M12 3.2a8.8 8.8 0 0 0-2.8 17.1c.44.08.6-.2.6-.44v-1.58c-2.43.53-2.95-1.04-2.95-1.04-.4-1-.98-1.26-.98-1.26-.8-.55.06-.54.06-.54.9.06 1.37.92 1.37.92.78 1.35 2.06.96 2.56.74.08-.57.3-.96.54-1.18-1.94-.22-3.98-.97-3.98-4.3 0-.95.34-1.72.9-2.33-.1-.22-.4-1.12.08-2.32 0 0 .75-.24 2.42.9A8.4 8.4 0 0 1 12 7.4c.75 0 1.5.1 2.2.3 1.67-1.14 2.42-.9 2.42-.9.48 1.2.18 2.1.1 2.32.55.6.9 1.38.9 2.33 0 3.33-2.04 4.08-3.98 4.3.3.26.57.8.57 1.63v2.43c0 .25.16.53.6.44A8.8 8.8 0 0 0 12 3.2Z" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="link-label">GitHub</span>
+          </a>
+          <a class="contact-link linkedin" href="https://www.linkedin.com/in/ada-sarp-şahin-b89b511b0/">
+            <span class="link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" role="img" aria-label="LinkedIn icon">
+                <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="8" cy="10" r="1.2" fill="currentColor"/>
+                <path d="M7 12.2v4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M11 16.4v-3.2a1.9 1.9 0 1 1 3.8 0v3.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11 12.4v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="link-label">LinkedIn</span>
+          </a>
+          <a class="contact-link instagram" href="https://www.instagram.com/there_is_a_platypus/">
+            <span class="link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" role="img" aria-label="Instagram icon">
+                <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="16.6" cy="7.6" r="1.1" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="link-label">Instagram</span>
+          </a>
         </div>
       </div>
     </section>
   </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Initialize map
+    const map = L.map('location-map', {
+      center: [45.0703, 7.6869],
+      zoom: 13,
+      dragging: false,
+      scrollWheelZoom: false,
+      zoomControl: false,
+      attributionControl: false
+    });
+
+    // Add dark-themed tile layer
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 20
+    }).addTo(map);
+
+    // Add marker for Turin city center
+    L.circleMarker([45.0703, 7.6869], {
+      radius: 6,
+      fillColor: '#ff9e2c',
+      color: '#ff9e2c',
+      weight: 2,
+      opacity: 0.8,
+      fillOpacity: 0.8
+    }).addTo(map);
+
+    const projectsToggle = document.getElementById("projects-toggle");
+    const extraCards = document.querySelectorAll(".done-card-extra");
+
+    if (projectsToggle && extraCards.length > 0) {
+      projectsToggle.addEventListener("click", () => {
+        const isExpanded = projectsToggle.getAttribute("aria-expanded") === "true";
+        const nextExpanded = !isExpanded;
+
+        extraCards.forEach((card) => {
+          card.hidden = !nextExpanded;
+        });
+
+        projectsToggle.setAttribute("aria-expanded", String(nextExpanded));
+        projectsToggle.textContent = nextExpanded ? "Show fewer projects" : "Show more projects";
+      });
+    }
+  </script>
 </body>
 </html>

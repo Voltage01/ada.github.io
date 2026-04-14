@@ -137,7 +137,7 @@ body::selection {
   grid-template-columns: 1.2fr 0.95fr;
   gap: 2rem;
   align-items: center;
-  padding: 5.6rem 0 3.2rem;
+  padding: 2rem 0 3.2rem;
 }
 
 .eyebrow {
@@ -329,6 +329,23 @@ h3 {
 .waveform span:nth-child(8) { height: 92%; }
 .waveform span:nth-child(9) { height: 58%; }
 
+.location-map {
+  width: 100%;
+  height: 140px;
+  margin: 1.2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(8, 5, 13, 0.5);
+}
+
+.location-map .leaflet-control-attribution {
+  display: none;
+}
+
+.location-map .leaflet-container {
+  background: transparent;
+}
+
 .section {
   padding: 2.2rem 0 1.6rem;
 }
@@ -375,6 +392,38 @@ h3 {
   gap: 1rem;
 }
 
+.projects-done-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.done-card {
+  padding: 1.4rem;
+}
+
+.done-link {
+  display: inline-flex;
+  margin-top: 0.9rem;
+  color: #f0d7ff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(240, 215, 255, 0.45);
+  padding-bottom: 0.08rem;
+}
+
+.done-link:hover {
+  color: var(--orange-bright);
+  border-bottom-color: rgba(255, 158, 44, 0.7);
+}
+
+.projects-done-actions {
+  margin-top: 1rem;
+}
+
+.projects-toggle {
+  min-width: 220px;
+}
+
 .project-card,
 .skills-panel {
   min-height: 100%;
@@ -406,33 +455,131 @@ h3 {
 .contact-box {
   position: relative;
   overflow: hidden;
+  padding: 2rem;
+  border-color: rgba(255, 176, 89, 0.28);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 158, 44, 0.18), transparent 34%),
+    radial-gradient(circle at 92% 8%, rgba(181, 108, 255, 0.2), transparent 30%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+}
+
+.contact-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
 }
 
 .contact-box::after {
   content: "";
   position: absolute;
-  inset: auto -10% -40% auto;
-  width: 260px;
-  height: 260px;
+  inset: auto -12% -46% auto;
+  width: 330px;
+  height: 330px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(138, 63, 252, 0.28), transparent 65%);
-  filter: blur(6px);
+  background: radial-gradient(circle, rgba(138, 63, 252, 0.38), transparent 65%);
+  filter: blur(12px);
+}
+
+.contact-title {
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  background: linear-gradient(135deg, #ffe1b0, #ff9e2c 45%, #ce98ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.contact-lead {
+  max-width: 66ch;
+  margin: 0.95rem 0 0;
+  color: rgba(247, 237, 255, 0.88);
+  font-size: 1.03rem;
+}
+
+.contact-accent-row {
+  margin-top: 1rem;
+}
+
+.contact-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.48rem 0.86rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1c102f;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffc567, #ff9e2c);
+  box-shadow: 0 0 24px rgba(255, 158, 44, 0.34);
 }
 
 .contact-links {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
   gap: 1rem;
-  flex-wrap: wrap;
   margin-top: 1.4rem;
 }
 
 .contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   color: var(--text);
   text-decoration: none;
-  padding: 0.85rem 1rem;
+  padding: 0.82rem 0.96rem;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.contact-links a:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 158, 44, 0.68);
+  background: rgba(255,255,255,0.12);
+}
+
+.link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.05rem;
+  height: 2.05rem;
   border-radius: 999px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff8f0;
+  background: linear-gradient(135deg, #ff9e2c, #b56cff);
+  box-shadow: 0 0 22px rgba(181, 108, 255, 0.38), 0 0 14px rgba(255, 122, 24, 0.34);
+}
+
+.link-icon svg {
+  width: 56%;
+  height: 56%;
+}
+
+.link-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(247, 237, 255, 0.86);
+}
+
+.contact-link.email .link-icon {
+  background: linear-gradient(135deg, #ffb84e, #ff7a18);
+}
+
+.contact-link.github .link-icon {
+  background: linear-gradient(135deg, #a26dfd, #5e35b1);
+}
+
+.contact-link.linkedin .link-icon {
+  background: linear-gradient(135deg, #42a5ff, #0a66c2);
+}
+
+.contact-link.instagram .link-icon {
+  background: linear-gradient(135deg, #ffd76a, #ff3b8d 45%, #8a3ffc);
 }
 
 .reveal {
@@ -456,7 +603,8 @@ h3 {
   .hero,
   .about-grid,
   .cards-grid,
-  .skills-layout {
+  .skills-layout,
+  .projects-done-grid {
     grid-template-columns: 1fr;
   }
 
@@ -488,7 +636,7 @@ h3 {
 
   .hero-actions,
   .contact-links {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .btn,
