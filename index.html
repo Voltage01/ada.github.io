@@ -65,16 +65,13 @@
 
         <p class="hero-text">
           I’m Ada, an Electronic and Communications Engineering student at
-          Politecnico di Torino. I try to publish projects where I can explore
-          the intersection of electronics, music technology, signal flow,
-          embedded systems, and visual or auditory experience. I am currently
-          focused on building experimental instruments and audiovisual systems
-          that treat the system itself not as support, but as part of the experience
-          itself.
+          Politecnico di Torino. I try to create projects where I can explore
+          the intersection of electronics, art, and visual or auditory experiences. I am currently
+          focused on building experimental instruments and audiovisual systems.
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#work">
+          <a class="btn btn-primary" href="#projects-done">
             See selected work
             <span aria-hidden="true">↘</span>
           </a>
@@ -108,6 +105,11 @@
           <li>
             <span class="tag-icon" aria-hidden="true">◎</span>
             Audiovisual Systems
+          </li>
+
+          <li>
+            <span class="tag-icon" aria-hidden="true">◐</span>
+            Psychophysics & Perception
           </li>
         </ul>
       </div>
@@ -174,7 +176,7 @@
             </div>
 
             <p>
-              Natural aesthetics with detail. Form follows
+              Combining aesthetics with functional design. Form follows
               interaction, and function.
             </p>
           </article>
@@ -206,8 +208,7 @@
               <h3>Experimental Instrument Design</h3>
 
               <p>
-                Prototyping musical tools that treat electronics not as support,
-                but as part of the instrument itself.
+                Prototyping musical tools that creates new types of sound and interaction.
               </p>
             </div>
           </article>
@@ -245,7 +246,7 @@
 
               <p>
                 Exploring neural networks, signal classification, and
-                data-driven systems in music and electronics contexts.
+                data-driven systems.
               </p>
             </div>
           </article>
@@ -265,17 +266,16 @@
             <div class="done-icon done-icon-teal" aria-hidden="true">⌘</div>
 
             <div class="done-content">
-              <p class="project-category">Mixed Signal Electronics</p>
-              <h3>Neural Networks from Scratch</h3>
+              <p class="project-category">Mixed Signal Electronic Design</p>
+              <h3>PoliWhanm</h3>
 
               <p>
-                Built core neural network logic from first principles with
-                practical scripts and notebooks to understand learning dynamics
-                without relying on heavy abstractions.
+                A wah guitar effects pedal with a wireless digital control mechanism.
+                Work in progress, currently in the prototyping stage.
               </p>
 
-              <a class="done-link" href="#contact">
-                Ask me about this project
+              <a class="done-link" href="https://github.com/PoliTeK/PoliWhanm">
+                Learn more about this project
                 <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -421,7 +421,6 @@
               <li>Electronics</li>
               <li>Signal Processing</li>
               <li>Control Systems</li>
-              <li>Circuit Prototyping</li>
             </ul>
           </article>
 
@@ -448,7 +447,6 @@
               <li>Neural Networks</li>
               <li>Signal Classification</li>
               <li>Data Analysis</li>
-              <li>Python & PyTorch</li>
             </ul>
           </article>
         </div>
@@ -462,20 +460,25 @@
             <p class="eyebrow">Contact</p>
 
             <h2>
-              Let’s make something
-              <span>vivid together.</span>
+              Let’s bring an
+              <span>idea to life.</span>
             </h2>
 
             <p>
-              Open to collaborations, prototypes, and research-heavy ideas in
-              electronics, sound, and machine learning.
+              Open to collaborations, internships, and different kinds of projects and researches.
             </p>
 
             <div class="contact-chip">
               <span class="availability-dot" aria-hidden="true"></span>
               Available for collaborations
             </div>
+
+            <div class="contact-chip">
+              <span class="availability-dot-internship" aria-hidden="true"></span>
+              Looking for internship opportunities
+            </div>
           </div>
+          
 
           <div class="contact-links">
             <a class="contact-link" href="mailto:adasarp48@gmail.com">
@@ -715,6 +718,10 @@
         });
       }
     });
+
+    document.getElementById("location-map").addEventListener("click", () => {
+  window.open("https://www.polito.it", "_blank");
+});
   </script>
 </body>
 </html>

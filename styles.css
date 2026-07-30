@@ -1339,6 +1339,19 @@ h3 {
     rgba(36, 157, 143, 0.14);
 }
 
+.availability-dot-internship {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+  background: var(--coral);
+
+  box-shadow:
+    0 0 0 5px
+    rgba(157, 103, 36, 0.14);
+}
+
+
 .contact-links {
   position: relative;
   z-index: 2;
@@ -2097,4 +2110,8 @@ h3 {
     width: 100%;
     justify-content: center;
   }
+
+  .location-map {
+    cursor: pointer;
+}
 }
