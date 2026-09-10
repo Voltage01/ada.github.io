@@ -2329,3 +2329,18 @@ h3 {
 @media (prefers-reduced-motion: reduce) {
   .event-card-media:hover, .event-card-media:focus-within { transform: none; }
 }
+
+/* Make research interests and internship availability easy to spot. */
+.opportunity-highlights { display: grid; gap: .75rem; margin: 1.4rem 0; }
+.opportunity-highlight { margin: 0; padding: 1rem 1.15rem; border-radius: 16px 16px 16px 5px; border-left: 4px solid; font-size: 1rem; line-height: 1.6; }
+.opportunity-highlight strong { display: block; font-family: var(--font-display); font-size: 1.15rem; line-height: 1.35; margin-top: .15rem; }
+.opportunity-research { color: var(--teal-deep); background: var(--teal-soft); border-color: var(--teal); }
+.opportunity-internship { color: #853322; background: var(--coral-soft); border-color: var(--coral); }
+.btn-cv { background: var(--yellow); color: var(--ink); border: 0; }
+.btn-cv:hover { background: var(--yellow-soft); color: var(--ink); }
+.btn-cv:focus-visible { outline: 3px solid var(--teal-dark); outline-offset: 4px; }
+#cv { scroll-margin-top: 7rem; }
+#cv:target { outline: 3px solid var(--coral); outline-offset: 4px; }
+@media (max-width: 560px) {
+  .opportunity-highlight { padding: .9rem 1rem; }
+}
