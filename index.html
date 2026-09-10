@@ -24,6 +24,9 @@
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   />
 
+  <link rel="icon" type="image/x-icon" href="brand-icon-v2.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="brand-icon-v2-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="brand-icon-v2-180.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -143,11 +146,13 @@
             <p class="card-label">Based in</p>
             <h3>Turin - Polytechnic University of Turin</h3>
 
-            <div
-              id="location-map"
-              class="location-map"
-              aria-label="Map showing Turin, Italy"
-            ></div>
+            <div class="location-map-wrap">
+              <a class="location-map-link" href="https://www.polito.it" aria-label="Visit Polytechnic University of Turin (opens in a new tab)" target="_blank" rel="noopener noreferrer">
+                <div id="location-map" class="location-map" aria-hidden="true"></div>
+                <span class="location-map-hint">Explore Politecnico ↗</span>
+              </a>
+              <a class="map-credit" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a>
+            </div>
 
             <p>
               Trying to collaborate with local projects.
@@ -262,20 +267,22 @@
           <h2>Projects and research material that I am currently working on.</h2>
         </div>
 
-        <div class="projects-done-grid" id="projects-done-grid">
-          <article class="done-card">
-            <div class="done-icon done-icon-teal" aria-hidden="true">⌘</div>
-
-            <div class="done-content">
-              <p class="project-category">Mixed Signal Electronic Design</p>
-              <h3>PoliWhanm</h3>
-
+        <div class="projects-done-grid" id="projects-done-grid" data-preview-count="3">
+          <article class="done-card has-photo media-card" data-image-key="poliwhanm">
+            <header class="card-cover card-cover-pcb">
+              <img class="card-photo" src="images/poliwhanm-pcb.png" alt="3D rendering of the PoliWhanm wah pedal circuit board" width="1081" height="628" loading="lazy" decoding="async" />
+              <div class="card-cover-title">
+                <p class="project-category">Mixed Signal Electronic Design</p>
+                <h3>PoliWhanm</h3>
+              </div>
+            </header>
+            <div class="done-content card-copy">
               <p>
                 A wah guitar effects pedal with a wireless digital control mechanism.
                 Work in progress, currently in the prototyping stage.
               </p>
 
-              <a class="done-link" href="https://github.com/PoliTeK/PoliWhanm">
+              <a class="done-link" href="https://github.com/PoliTeK/PoliWhanm" target="_blank" rel="noopener noreferrer">
                 Learn more about this project
                 <span aria-hidden="true">→</span>
               </a>
@@ -284,7 +291,7 @@
 
         </div>
 
-        <div class="projects-done-actions">
+        <div class="projects-done-actions" hidden>
           <button
             class="btn btn-outline projects-toggle"
             id="projects-toggle"
@@ -304,20 +311,25 @@
           <p class="eyebrow">Events &amp; conferences</p>
           <h2 id="events-heading">Summer schools, conferences, and experiences beyond my everyday work.</h2>
         </div>
-        <div class="events-list">
+        <div class="events-list" id="events-list" data-preview-count="3">
           <!-- Duplicate this article to add another event, conference, or workshop. -->
-          <article class="event-card" aria-labelledby="raive-title">
+          <article class="event-card event-card-media has-photo" data-image-key="raive" aria-labelledby="raive-title">
+            <img class="card-photo event-card-photo" src="images/raive.jpg" alt="Live performance with colorful projected visuals at RAIVE AI Summer School" width="1600" height="900" loading="lazy" decoding="async" />
             <div class="event-details">
+                <div class="event-heading">
               <div class="event-tags" aria-label="Event type and participation">
                 <span>Summer school</span><span>Participant</span>
               </div>
               <h3 id="raive-title">RAIVE AI Summer School</h3>
+                </div>
+              <div class="event-copy">
               <p>A 1-week intensive summer school on AI and its usage in developing artistic projects.</p>
               <a class="done-link" href="https://raive.school" target="_blank" rel="noopener noreferrer">
                 Visit event website <span aria-hidden="true">↗</span>
               </a>
+              </div>
             </div>
-            <div class="event-project">
+            <div class="event-project" data-image-key="commedia">
               <span class="event-project-symbol" aria-hidden="true">↗</span>
               <p class="project-category">From the summer school</p>
               <h4>Commed'IA</h4>
@@ -325,6 +337,9 @@
               <span class="event-link-pending">Project showcase coming soon</span>
             </div>
           </article>
+        </div>
+        <div class="projects-done-actions" hidden>
+          <button class="btn btn-outline" id="events-toggle" type="button" aria-expanded="false" aria-controls="events-list">Show more events</button>
         </div>
       </div>
     </section>
@@ -340,9 +355,7 @@
       <a
         class="instagram-profile-link"
         href="https://www.instagram.com/there_is_a_platypus/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+       target="_blank" rel="noopener noreferrer">
         See everything on Instagram
         <span aria-hidden="true">↗</span>
       </a>
@@ -350,13 +363,11 @@
 
     <div class="visual-canvas">
 
-      <a
-        class="canvas-item canvas-item-large canvas-item-teal"
+      <div class="canvas-item canvas-item-large canvas-item-teal has-video" data-video-key="lens">
+      <a class="canvas-project-link"
         href="https://www.instagram.com/p/DbTctonynhh/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="View audiovisual project: Reactive signal landscape"
-      >
+        aria-label="View The Lens on Instagram (opens in a new tab)"
+       target="_blank" rel="noopener noreferrer">
         <img
           src="images/The_Lens.PNG"
           alt="Still from a reactive audiovisual signal landscape"
@@ -368,14 +379,14 @@
           <span class="canvas-arrow" aria-hidden="true">↗</span>
         </span>
       </a>
+      </div>
 
       <a
         class="canvas-item canvas-item-tall canvas-item-coral"
+        data-video-key="crickets"
         href="https://www.instagram.com/p/DNh3MUkImyg/?img_index=1"
-        target="_blank"
-        rel="noopener noreferrer"
         aria-label="View audiovisual project: Sound-driven forms"
-      >
+       target="_blank" rel="noopener noreferrer">
         <img
           src="images/Swarm_of_Crickets.png"
           alt="Abstract forms generated from sound"
@@ -390,11 +401,10 @@
 
       <a
         class="canvas-item canvas-item-small canvas-item-yellow"
+        data-video-key="jukebox"
         href="https://www.instagram.com/p/DMawdDJINrv/?img_index=1"
-        target="_blank"
-        rel="noopener noreferrer"
         aria-label="View audiovisual project: Oscilloscope study"
-      >
+       target="_blank" rel="noopener noreferrer">
         <img
           src="images/Digital_Jukebox.jpeg"
           alt="Colorful oscilloscope-inspired visual experiment"
@@ -407,13 +417,11 @@
         </span>
       </a>
 
-      <a
-        class="canvas-item canvas-item-wide canvas-item-yellow"
+      <div class="canvas-item canvas-item-wide canvas-item-yellow has-video" data-video-key="inktober">
+      <a class="canvas-project-link"
         href="https://www.instagram.com/p/DGeR_NnoNjY/?img_index=1"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="View audiovisual project: Motion and rhythm"
-      >
+        aria-label="View Inktober on Instagram (opens in a new tab)"
+       target="_blank" rel="noopener noreferrer">
         <img
           src="images/Inktober.PNG"
           alt="Audiovisual composition exploring motion and rhythm"
@@ -425,6 +433,7 @@
           <span class="canvas-arrow" aria-hidden="true">↗</span>
         </span>
       </a>
+      </div>
 
     </div>
 
@@ -541,9 +550,7 @@
             <a
               class="contact-link"
               href="https://github.com/Voltage01"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+             target="_blank" rel="noopener noreferrer">
               <span class="contact-icon contact-icon-dark" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path
@@ -562,9 +569,7 @@
             <a
               class="contact-link"
               href="https://www.linkedin.com/in/ada-sarp-%C5%9Fahin-b89b511b0/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+             target="_blank" rel="noopener noreferrer">
               <span class="contact-icon contact-icon-blue" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
                   <rect
@@ -608,9 +613,7 @@
             <a
               class="contact-link"
               href="https://www.instagram.com/there_is_a_platypus/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+             target="_blank" rel="noopener noreferrer">
               <span class="contact-icon contact-icon-coral" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
                   <rect
@@ -672,7 +675,7 @@
         });
 
         L.tileLayer(
-          "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+          "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
           {
             maxZoom: 20
           }
@@ -689,38 +692,6 @@
 
         window.addEventListener("load", () => {
           map.invalidateSize();
-        });
-      }
-
-      const projectsToggle = document.getElementById("projects-toggle");
-      const extraCards = document.querySelectorAll(".done-card-extra");
-
-      if (projectsToggle && extraCards.length > 0) {
-        projectsToggle.addEventListener("click", () => {
-          const isExpanded =
-            projectsToggle.getAttribute("aria-expanded") === "true";
-
-          const nextExpanded = !isExpanded;
-
-          extraCards.forEach((card, index) => {
-            card.hidden = !nextExpanded;
-
-            if (nextExpanded) {
-              card.style.animationDelay = `${index * 80}ms`;
-              card.classList.add("project-card-enter");
-            } else {
-              card.classList.remove("project-card-enter");
-            }
-          });
-
-          projectsToggle.setAttribute(
-            "aria-expanded",
-            String(nextExpanded)
-          );
-
-          projectsToggle.textContent = nextExpanded
-            ? "Show fewer projects"
-            : "Show more projects";
         });
       }
 
@@ -751,9 +722,9 @@
       }
     });
 
-    document.getElementById("location-map").addEventListener("click", () => {
-  window.open("https://www.polito.it", "_blank");
-});
+
   </script>
+  <script src="media.js"></script>
+  <script src="cards.js"></script>
 </body>
 </html>
