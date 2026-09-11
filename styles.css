@@ -2344,3 +2344,45 @@ h3 {
 @media (max-width: 560px) {
   .opportunity-highlight { padding: .9rem 1rem; }
 }
+
+/* Teams and organizations, replacing the repeated skills summary. */
+.collaborations-list { display: grid; gap: 1rem; }
+.collaboration-card { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; align-items: center; gap: 1.5rem; padding: clamp(1.35rem, 3vw, 2rem); background: var(--teal-soft); border-radius: 24px 24px 24px 8px; box-shadow: var(--shadow); transition: transform 220ms ease, box-shadow 220ms ease; }
+.collaboration-mark { width: 72px; height: 72px; display: grid; place-items: center; border-radius: 20px 20px 8px 20px; background: var(--teal); color: white; }
+.collaboration-mark svg { width: 48px; height: 48px; }
+.collaboration-content { min-width: 0; }
+.collaboration-content .project-category { margin: 0 0 .5rem; }
+.collaboration-content h3 { font-size: clamp(1.6rem, 3vw, 2rem); margin-bottom: .8rem; }
+.collaboration-role { display: inline-block; margin: 0; padding: .45rem .8rem; background: var(--coral-soft); color: #853322; border-radius: 9px; font-weight: 700; font-size: .95rem; }
+.collaboration-link { display: inline-flex; align-items: center; justify-content: center; gap: .7rem; min-height: 44px; padding: .6rem 1rem; color: var(--teal-deep); font-weight: 700; text-decoration: none; border-radius: 10px; background: rgba(255,255,255,.55); }
+.collaboration-link:hover { background: var(--cream-light); }
+.collaboration-link:focus-visible { outline: 3px solid var(--teal-dark); outline-offset: 4px; }
+@media (hover: hover) and (pointer: fine) {
+  .collaboration-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+}
+@media (max-width: 560px) {
+  .collaboration-card { grid-template-columns: 52px minmax(0, 1fr); gap: 1rem; }
+  .collaboration-mark { width: 52px; height: 52px; border-radius: 14px 14px 6px 14px; }
+  .collaboration-mark svg { width: 36px; height: 36px; }
+  .collaboration-link { grid-column: 1 / -1; }
+}
+@media (prefers-reduced-motion: reduce) { .collaboration-card:hover { transform: none; } }
+
+/* PoliTeK's orange wordmark, white space, dark surfaces, and purple accent. */
+.collaboration-card.politek-card { display: block; padding: 0; overflow: hidden; background: #0c0c02; border-radius: 24px 24px 24px 8px; }
+.politek-brand-panel { background: #0c0c02; padding: clamp(1rem, 3vw, 2.5rem); }
+.politek-brand-panel img { display: block; width: 100%; height: auto; object-fit: contain; }
+.politek-card-body { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: clamp(1.4rem, 3vw, 2.25rem); border-top: 0; }
+.politek-role-block { min-width: 0; }
+.politek-role-block h3 { color: #efa356; font-size: .9rem; text-transform: none; letter-spacing: .13em; margin: 0 0 .65rem; }
+.politek-role { margin: 0; color: #fff; font-family: var(--font-display); font-size: clamp(1.6rem, 3.2vw, 2.5rem); font-weight: 600; line-height: 1.15; letter-spacing: -.035em; }
+.politek-visit { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; gap: 1rem; min-height: 48px; padding: .8rem 1.2rem; background: #7741b7; color: #fff; border-radius: 8px; font-weight: 700; text-decoration: none; transition: background 180ms ease; }
+.politek-visit:hover { background: #8c52d2; }
+.politek-visit:focus-visible { outline: 3px solid #efa356; outline-offset: 5px; }
+@media (max-width: 560px) {
+  .politek-brand-panel { padding: 1rem .65rem; }
+  .politek-card-body { flex-direction: column; align-items: stretch; gap: 1.25rem; }
+  .politek-visit { width: 100%; }
+}
+
+.politek-role-prefix { color: #c4a0f0; font-weight: 400; }
