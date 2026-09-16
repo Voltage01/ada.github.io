@@ -64,6 +64,15 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 84px;
+
+  /* Paint the browser canvas itself so desktop never falls back to white. */
+  background:
+    linear-gradient(
+      180deg,
+      var(--cream-light) 0%,
+      var(--cream) 48%,
+      #fae8c4 100%
+    );
 }
 
 body {
@@ -77,13 +86,7 @@ body {
   font-family: var(--font-body);
   line-height: 1.5;
 
-  background:
-    linear-gradient(
-      180deg,
-      var(--cream-light) 0%,
-      var(--cream) 48%,
-      #fae8c4 100%
-    );
+  background: transparent;
 }
 
 body::selection {
